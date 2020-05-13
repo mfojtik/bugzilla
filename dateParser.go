@@ -53,7 +53,6 @@ func (parser *baseParser) utcNow() (t time.Time) {
 	return time.Now().UTC()
 }
 
-//parse implements chain of commands pattern and tries parsing stupid bugzilla changed date by every means possible
 func (parser *combinedParser) parse(value string) (t time.Time, err error) {
 	parsers := []bugzillaChangedDateParser{&defaultParser{}, &timeParser{}, &dayOfWeekParser{}, &yearMonthDateParser{},
 		&csvDateParser{}}
