@@ -180,6 +180,8 @@ type BugUpdate struct {
 	NeedInfo      string       `json:"needinfo,omitempty"`
 	NeedInfoRole  string       `json:"needinfo_role,omitempty"`
 	Flags         []FlagChange `json:"flags,omitempty"`
+	Priority      string       `json:"priority,omitempty"`
+	Severity      string       `json:"severity,omitempty"`
 }
 
 // ExternalBug contains details about an external bug linked to a Bugzilla bug.
