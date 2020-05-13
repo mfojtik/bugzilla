@@ -170,6 +170,8 @@ type BugUpdate struct {
 	DevWhiteboard string       `json:"cf_devel_whiteboard,omitempty"`
 	Comment       *BugComment  `json:"comment,omitempty"`
 	Keywords      *BugKeywords `json:"keywords,omitempty"`
+	NeedInfo      string       `json:"needinfo,omitempty"`
+	NeedInfoRole  string       `json:"needinfo_role,omitempty"`
 }
 
 // ExternalBug contains details about an external bug linked to a Bugzilla bug.
