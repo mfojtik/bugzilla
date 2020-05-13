@@ -160,6 +160,13 @@ type BugList struct {
 	Bugs []Bug `json:"bugs,omitempty"`
 }
 
+type FlagChange struct {
+	Name string `json:"name,omitempty"`
+	// The flags new status (i.e. "?", "+", "-" or "X" to clear a flag).
+	Status    string `json:"status,omitempty"`
+	Requestee string `json:"requestee,omitempty"`
+}
+
 // BugUpdate contains fields to update on a Bug. See API documentation at:
 // https://bugzilla.readthedocs.io/en/latest/api/core/v1/bug.html#update-bug
 type BugUpdate struct {
@@ -172,6 +179,7 @@ type BugUpdate struct {
 	Keywords      *BugKeywords `json:"keywords,omitempty"`
 	NeedInfo      string       `json:"needinfo,omitempty"`
 	NeedInfoRole  string       `json:"needinfo_role,omitempty"`
+	Flags         []FlagChange `json:"flags,omitempty"`
 }
 
 // ExternalBug contains details about an external bug linked to a Bugzilla bug.
